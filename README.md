@@ -1,5 +1,5 @@
 # File Carving - Forensics
-We are given a pdf file called `Mandiant.pdf` that contains an EmbeddedFile object stream. The pdf is 76 pages long and we could read it but lets move on to its analysis.
+We are given a pdf file called `Mandiant.pdf` that contains an EmbeddedFile object stream. The pdf is 76 pages long and we could read it but we don't want that. Let's move on to the fun part, its analysis.
 # PDF Analysis
 First I used `qpdf` to extract information about the pdf.
 > ` qpdf --qdf --object-streams=disable Mandiant_c920fc463eaf996489749457abc9b2eb.pdf out.pdf`
@@ -54,7 +54,7 @@ But it denies us permission even if sudo is used. Using `chmod`,
 
 > `chmod +x a.out`
 
-By running the file again, we obtain the flag.
+By running the file again, we obtain the flag. This was a whole lotta fun Eh?
 
 > `hello world, i found this flag under some bit-maps.... [HAVE A FLAG]
   

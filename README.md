@@ -13,12 +13,12 @@ Now decode and output it to a file `out`.
 Using the command 
 > `file out` , we see that its a PNG.
 
-> `mv out out.png`
+> `mv out pic1.png`
 
 
 
 Run scalpel on this PNG.
-> `scalpel -c /etc/scalpel/scalpel.conf -o scaltest out.png`
+> `scalpel -c /etc/scalpel/scalpel.conf -o scaltest pic1.png`
 
 The PNG contains a 7zip archive. Move into `7z-10-0` and we can extract `00000000.7z` using `p7zip`. 
 > `7za x 00000000.7z `
@@ -26,14 +26,14 @@ The PNG contains a 7zip archive. Move into `7z-10-0` and we can extract `0000000
 We get a text file called `secret.exe` which seems to be a bunch of base64. 
 
 Decoding it,
-> `base64 -d < secret.exe > pic.jpg`
+> `base64 -d < secret.exe > pic2.jpg`
 
-Running `file pic.jpg` tells us its a JPEG.
+Running `file pic2.jpg` tells us its a JPEG.
 > pic: JPEG image data
 
 
 Using `strings`, we find that the JPG contains two base64 encoded blobs:
-> `strings -a pic.jpg`
+> `strings -a pic2.jpg`
  
 > b#o]
   Y2EB

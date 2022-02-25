@@ -56,10 +56,9 @@ But it denies us permission even if sudo is used. Using `chmod`,
 
 By running the file again, we obtain the flag. This was a whole lotta fun Eh?
 
-> `hello world, i found this flag under some bit-maps.... [HAVE A FLAG]
+> `hello world, i found this flag under some bit-maps.... [HAVE A FLAG]`
   
   
-> flag{s3v3r4l_l4y3r5_d33p_&_2m4ny_l4yers_w1d3}
-`
+> `flag{s3v3r4l_l4y3r5_d33p_&_2m4ny_l4yers_w1d3}`
 
 

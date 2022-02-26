@@ -23,10 +23,10 @@ Run scalpel on this PNG.
 The PNG contains a 7zip archive. Move into `7z-10-0` and we can extract `00000000.7z` using `p7zip`. 
 > `7za x 00000000.7z `
 
-We get a text file called `secret.exe` which seems to be a bunch of base64. 
+We get a text file called `secret.txt` which seems to be a bunch of base64. 
 
 Decoding it,
-> `base64 -d < secret.exe > pic2.jpg`
+> `base64 -d < secret.txt > pic2.jpg`
 
 Running `file pic2.jpg` tells us its a JPEG.
 > pic: JPEG image data
@@ -45,7 +45,7 @@ Using `strings`, we find that the JPG contains two base64 encoded blobs:
   XQN6Y6QIpfofWw857i5DK[...]  
 
 
-We can decode and split these into two and run `xxd` but we dont find anything.
+We can decode and split these into two and run `xxd` but we don't find anything useful.
 
 We have to use a program called `Free File Camouflage` to extract a hidden file, `a.out`, from the blob(s) - an ELF. Lets run it,
 > `./a.out`
